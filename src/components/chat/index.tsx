@@ -9,30 +9,14 @@ import {
   MessageSendButton,
   MessageSendIcon,
 } from "./styles";
+import { useState } from "react";
 import { SendIcon } from "../../assets";
-import { Component, useState } from "react";
 import { message } from "./interfaces";
+import { useMessages } from "../../lib/messages";
 
 const Chat: React.FC = () => {
+  const { messageList, sendMessage } = useMessages();
   const [messageInput, setMessageInput] = useState<string>("");
-  const [messageList, setMessageList] = useState<message[]>([
-    {
-      id: "0",
-      sender: "Henrique",
-      messageSent: "Mensagem",
-    },
-  ]);
-
-  const sendMessage = () => {
-    const m = messageList;
-    m.push({
-      id: m.length.toString(),
-      sender: "Pedro",
-      messageSent: messageInput,
-    });
-    setMessageList(m);
-    console.log(messageList);
-  };
 
   return (
     <ChatBox>
@@ -49,12 +33,14 @@ const Chat: React.FC = () => {
       <MessageInputDiv>
         <MessageInput
           type="text"
-          value={messageInput}
           onChange={(event) => {
             setMessageInput(event.target.value);
           }}
         />
-        <MessageSendButton type="button" onClick={sendMessage}>
+        <MessageSendButton
+          type="button"
+          onClick={() => sendMessage(messageInput)}
+        >
           <MessageSendIcon src={SendIcon} alt="send" />
         </MessageSendButton>
       </MessageInputDiv>
