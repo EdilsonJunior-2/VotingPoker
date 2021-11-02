@@ -17,7 +17,7 @@ export const ChatBox = styled.div`
   width: 20%;
   min-width: 200px;
   background: ${colors.backgroundLight};
-  height: 700px;
+  min-height: 700px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
