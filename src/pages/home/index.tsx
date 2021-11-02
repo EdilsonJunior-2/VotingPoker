@@ -1,5 +1,6 @@
 import Chat from "../../components/chat";
 import CardPoll from "../../components/cardPoll";
+import Users from "../../components/users";
 const Home: React.FC = () => {
   return (
     <div
@@ -9,6 +10,7 @@ const Home: React.FC = () => {
     >
       <Chat />
       <CardPoll />
+      <Users />
     </div>
   );
 };

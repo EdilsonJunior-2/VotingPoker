@@ -1,6 +1,5 @@
 import {
   CardDetails,
-  H2,
   CardTitle,
   FinishCardButton,
   PollBox,
@@ -10,7 +9,6 @@ import {
   Points,
   Point,
   PollDetails,
-  H3,
   WhoAlreadyVoted,
   AlreadyVoted,
   Consolidated,
@@ -18,6 +16,7 @@ import {
   ConsolidatedDetail,
   ConsolidatedPoint,
 } from "./styles";
+import { H2, H3 } from "../../styles/titles";
 
 const CardPoll: React.FC = () => {
   return (

@@ -19,10 +19,6 @@ export const CardTitle = styled.div`
   justify-content: space-between;
 `;
 
-export const H2 = styled.h2`
-  margin: 0;
-`;
-
 export const FinishCardButton = styled.h4`
   margin: 0;
   color: ${colors.info};
@@ -70,10 +66,6 @@ export const AlreadyVoted = styled.div`
   background-color: ${colors.backgroundLighter};
   padding: 10px;
   border-radius: 20px;
-`;
-
-export const H3 = styled.h3`
-  margin: 0;
 `;
 
 export const WhoAlreadyVoted = styled.div`
