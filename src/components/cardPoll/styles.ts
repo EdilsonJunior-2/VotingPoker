@@ -44,8 +44,22 @@ export const Points = styled.div`
   flex-wrap: wrap;
 `;
 
-export const Point = styled.div`
-  background: ${colors.background};
+export const EffortPoint = styled.div`
+  background: ${(props: {
+    value: number;
+    pointsSelected: number;
+    confirmVote: boolean;
+  }) =>
+    props.value === props.pointsSelected ? colors.success : colors.background};
+  cursor: ${(props: { confirmVote: boolean }) =>
+    props.confirmVote ? "initial" : "pointer"};
+  opacity: ${(props: {
+    value: number;
+    pointsSelected: number;
+    confirmVote: boolean;
+  }) =>
+    props.confirmVote && props.value !== props.pointsSelected ? "0.5" : "1"};
+  font-weight: bold;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -53,11 +67,38 @@ export const Point = styled.div`
   min-width: 70px;
   height: 70px;
   margin: 5px;
+  transition: 300ms;
+`;
+
+export const TimePoint = styled.div`
+  background: ${(props: {
+    value: number;
+    pointsSelected: number;
+    confirmVote: boolean;
+  }) =>
+    props.value === props.pointsSelected ? colors.success : colors.background};
+  cursor: ${(props: { confirmVote: boolean }) =>
+    props.confirmVote ? "initial" : "pointer"};
+  opacity: ${(props: {
+    value: number;
+    pointsSelected: number;
+    confirmVote: boolean;
+  }) =>
+    props.confirmVote && props.value !== props.pointsSelected ? "0.5" : "1"};
+  font-weight: bold;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 70px;
+  height: 70px;
+  margin: 5px;
+  transition: 300ms;
 `;
 
 export const PollDetails = styled.div`
   display: grid;
-  grid-template-columns: 64% 35%;
+  grid-template-columns: 60% 39%;
   grid-gap: 1%;
   min-height: 200px;
 `;

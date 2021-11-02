@@ -13,6 +13,7 @@ export const Users = styled.div`
   margin: 10px 0;
   padding: 20px 5px;
   background-color: ${colors.backgroundLighter};
+  height: 80%;
 `;
 
 export const User = styled.div`

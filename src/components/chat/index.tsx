@@ -11,7 +11,7 @@ import {
 } from "./styles";
 import { useState } from "react";
 import { SendIcon } from "../../assets";
-import { message } from "./interfaces";
+import { message } from "../../lib/interfaces";
 import { useMessages } from "../../lib/messages";
 
 const Chat: React.FC = () => {

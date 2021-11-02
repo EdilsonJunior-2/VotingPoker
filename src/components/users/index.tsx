@@ -1,7 +1,7 @@
 import { H2 } from "../../styles/titles";
-import { User, UsersBox } from "./styles";
+import { User, UsersBox, Users } from "./styles";
 
-const Users: React.FC = () => {
+const UsersList: React.FC = () => {
   return (
     <UsersBox>
       <H2>Users Online</H2>
@@ -13,4 +13,4 @@ const Users: React.FC = () => {
   );
 };
 
-export default Users;
+export default UsersList;
