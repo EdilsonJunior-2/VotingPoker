@@ -2,13 +2,7 @@ import { useState } from "react";
 import { message } from "./interfaces";
 
 export const useMessages = () => {
-  const [messageList, setMessageList] = useState<message[]>([
-    {
-      id: "0",
-      sender: "Henrique",
-      messageSent: "Mensagem",
-    },
-  ]);
+  const [messageList, setMessageList] = useState<message[]>([]);
 
   const sendMessage = (message: string) => {
     const m = messageList.slice();

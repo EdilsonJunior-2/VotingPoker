@@ -1,17 +1,14 @@
 import Chat from "../../components/chat";
 import CardPoll from "../../components/cardPoll";
 import UsersList from "../../components/users";
+import { HomeDiv } from "./styles";
 const Home: React.FC = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-      }}
-    >
+    <HomeDiv>
       <Chat />
       <CardPoll />
       <UsersList />
-    </div>
+    </HomeDiv>
   );
 };
 

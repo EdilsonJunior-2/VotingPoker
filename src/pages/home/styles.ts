@@ -1,3 +1,5 @@
 import styled from "styled-components";
 
-export const Chat = styled.div``;
+export const HomeDiv = styled.div`
+  display: flex;
+`;
