@@ -19,8 +19,11 @@ export const CardTitle = styled.div`
   justify-content: space-between;
 `;
 
+export const ButtonsBox = styled.div`
+  display: flex;
+`;
 export const FinishCardButton = styled.h4`
-  margin: 0;
+  margin: 0 0 0 15px;
   color: ${colors.info};
   border: none;
   background: transparent;
@@ -30,6 +33,10 @@ export const FinishCardButton = styled.h4`
 export const CardDescription = styled.div`
   overflow: auto;
   height: 80px;
+  margin: 10px 0;
+`;
+
+export const CardDescriptionUndefinedSize = styled.div`
   margin: 10px 0;
 `;
 
@@ -131,4 +138,8 @@ export const ConsolidatedDetail = styled.div`
 export const ConsolidatedPoint = styled.div`
   color: ${colors.success};
   margin: 20px 0 0 15px;
+`;
+
+export const FinalPollDetails = styled.div`
+  margin-bottom: 30px;
 `;

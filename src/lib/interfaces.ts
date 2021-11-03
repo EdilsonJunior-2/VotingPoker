@@ -8,3 +8,8 @@ export interface poll {
   name: string;
   points: number;
 }
+
+export interface points {
+  effort: number;
+  time: number;
+}
