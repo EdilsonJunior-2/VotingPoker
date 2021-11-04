@@ -42,6 +42,23 @@ export const CardDescriptionUndefinedSize = styled.div`
 
 export const PointsSelectionBox = styled.div``;
 
+export const ConfirmButton = styled.button`
+  border: none;
+  background-color: ${colors.successLight};
+  margin-bottom: 10px;
+  padding: 10px;
+  font-weight: bold;
+  transition: 200ms;
+  cursor: pointer;
+  &:hover {
+    background-color: ${colors.success};
+  }
+  &:disabled:hover {
+    background-color: ${colors.successLight};
+    cursor: initial;
+  }
+`;
+
 export const PointsBox = styled.div``;
 
 export const Points = styled.div`

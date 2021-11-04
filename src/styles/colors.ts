@@ -6,4 +6,5 @@ export const colors = {
   otherUserColor: "#b0b0b0",
   info: "#1a73e8",
   success: "#4BB543",
+  successLight: "#6DD765",
 };

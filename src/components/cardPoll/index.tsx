@@ -20,6 +20,7 @@ import {
   ConsolidatedPoint,
   CardDescriptionUndefinedSize,
   FinalPollDetails,
+  ConfirmButton,
 } from "./styles";
 import { H2, H3 } from "../../styles/titles";
 import { useEffort } from "../../lib/effort";
@@ -30,6 +31,7 @@ import { points } from "../../lib/interfaces";
 const CardPoll: React.FC = () => {
   const [whoVotedArray, setWhoVotedArray] = useState<string[]>([]);
   const [actualCard, setActualCard] = useState<number>(0);
+  const [pollFinished, setPollFinished] = useState<boolean>(false);
   const [allPoints, setAllPoints] = useState<points[]>([]);
 
   const {
@@ -55,6 +57,7 @@ const CardPoll: React.FC = () => {
   function finishPoll() {
     calcFinalEffortPoints();
     calcFinalTimePoints();
+    setPollFinished(true);
   }
 
   function finishCard() {
@@ -68,6 +71,7 @@ const CardPoll: React.FC = () => {
     finishTimePoll();
     setWhoVotedArray([]);
     setActualCard((actualCard) => actualCard + 1);
+    setPollFinished(false);
   }
 
   return (
@@ -227,19 +231,25 @@ const CardPoll: React.FC = () => {
                 21
               </TimePoint>
             </Points>
-            <button
+            <ConfirmButton
               onClick={() => {
-                if (effortPointsSelected !== 0 && timePointsSelected !== 0) {
+                if (
+                  effortPointsSelected !== 0 &&
+                  timePointsSelected !== 0 &&
+                  !pollFinished
+                ) {
                   registerEffortVote("Pedro");
                   registerTimeVote("Pedro");
                   const newName = whoVotedArray.slice();
                   newName.push("Pedro");
                   setWhoVotedArray(newName);
+                  setPollFinished(true);
                 }
               }}
+              disabled={pollFinished}
             >
               Confirm
-            </button>
+            </ConfirmButton>
           </PointsBox>
           <PollDetails>
             <AlreadyVoted>
